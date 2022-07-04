@@ -158,7 +158,7 @@ SELECT mem_id, mem_bir
 -- 정답            
 SELECT *
     FROM member
-        WHERE mem_bir NOT Between '1975-01-01' AND '1975-12-31' ;
+        WHERE mem_bir NOT BETWEEN '1975-01-01' AND '1975-12-31' ;
 
 -- 회원아이디가 a001인 회원이 주문한 상품코드를 조회해주세요
 -- 조회칼럼은 회원아이디, 상품코드
