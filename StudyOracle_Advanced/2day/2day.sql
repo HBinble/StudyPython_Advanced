@@ -4,7 +4,8 @@
 SELECT * 
   FROM member ;
 
--- 취미가 수영인 회원들 중에 마일리지의 값이 1000 이상인 
+-- 취미가 수영인 회원들 중에 
+-- 마일리지의 값이 1000 이상인 
 -- 회원아이디, 회원이름, 회원취미, 회원마일리지 조회
 -- 정렬은 회원이름 기준 오름차순
 SELECT mem_id, mem_name, mem_like, mem_mileage
@@ -22,7 +23,7 @@ SELECT mem_id, mem_name, mem_like
                     WHERE mem_name = '김은대');
 
 -- 주문내역이 있는 회원에 대한 정보를 조회하려 합니다.
--- 회원아이디, 회원이름, 주문번호, 주문수량 조회하기
+-- 회원아이디, 회원이름, 주문번호, 주문수량 조회하기 (column 서브쿼리)
 SELECT cart_member, cart_no, cart_qty,
         (SELECT mem_name
            FROM member
@@ -40,7 +41,8 @@ SELECT cart_member, cart_no, cart_qty,
           WHERE prod_id = cart_prod) as prod_name
   FROM cart;
 
--- a001 회원이 주문한 상품에 대한 상품분류코드, 상품분류명 조회하기
+-- a001 회원이 주문한 상품에 대한 
+-- 상품분류코드, 상품분류명 조회하기
 SELECT lprod_gu, lprod_nm
   FROM lprod
  WHERE lprod_gu IN (SELECT prod_lgu
@@ -107,7 +109,7 @@ SELECT mem_id || 'name is' || mem_name
   FROM member;
 
 -- TRIM
-SELECT '<' || TRIM('   A A A   ') || '>' TRIM1,
+SELECT '<' || TRIM('   A   AA   ') || '>' TRIM1,
        '<' || TRIM(LEADING 'a' FROM 'aaAaBaAaa') || '>' TRIM2,
        '<' || TRIM('a' FROM 'aaAaBaAaa') || '>' TRIM3
 FROM dual;
@@ -146,7 +148,7 @@ SELECT mem_id, mem_name
                        AND prod_lgu IN(
                         SELECT lprod_gu
                           FROM lprod
-                         WHERE lprod_nm Like '%전자%')));
+                         WHERE lprod_nm LIKE '%전자%')));
                          
 --함수(숫자열)
 -- ROUND(n,l) = (컬럼명, 위치) : 반올림
@@ -209,6 +211,7 @@ SELECT '[' || CAST('Hello' AS CHAR(30)) || ']' "형변환"
 -- VARCHAR(메모리 효율 : 가변적)
 SELECT '[' || CAST('Hello' AS VARCHAR(30)) || ']' "형변환"
   FROM dual;  
+  
 -- 0000-00-00, 0000/00/00, 0000.00.00, 00000000,
 --   00-00-00,  00/00/00,   00.00.00
 SELECT CAST('1997/12/25' AS DATE)
@@ -229,8 +232,7 @@ SELECT prod_insdate, TO_CHAR(prod_insdate, 'YYYY-MM-DD')
   FROM prod;
 -- 회원이름과 생일로 다음처럼 출력되게 작성하시오
 -- ex) 김은대님은 1976년 1월 출생이고 태어난 요일은 목요일
-SELECT mem_name, mem_bir, 
-        mem_name || '님은 ' || TO_CHAR(mem_bir,'YYYY')|| '년 ' 
+SELECT mem_name || '님은 ' || TO_CHAR(mem_bir,'YYYY')|| '년 ' 
         || TO_CHAR(mem_bir, 'MM') || '월 출생이고 태어난 요일은 ' 
         || TO_CHAR(mem_bir, 'DAY')
   FROM member;
@@ -241,9 +243,13 @@ SELECT TO_CHAR(1234.6, '99,999.00'),
        TO_CHAR(1234.6, '999,999,999.99'),
        TO_CHAR(1234.6, '999.99')
   FROM dual;
+  
 SELECT TO_CHAR(-1234.6, 'L9999.00PR'),
        TO_CHAR(-1234.6, 'L9999.99PR')
   FROM dual;
+  
+-- 계정 잠금 해제
+Alter User 사용자계정 Account Unlock;
   
 -- 여자인 회원이 구매한 상품 중에
 -- 상품분류에 전자가 포함되어 있고,
@@ -275,21 +281,17 @@ SELECT prod_id, prod_name
      WHERE cart_member IN (
         SELECT mem_id
           FROM member
-         WHERE cart_member IN (
-             SELECT mem_id
-              FROM member
-             WHERE MOD(SUBSTR(mem_regno2,1,1), 2) = 0)))
-         AND prod_lgu IN (
-            SELECT lprod_gu
-              FROM lprod
-             WHERE lprod_nm LIKE '%전자%')
-         AND prod_buyer IN (
-            SELECT buyer_id
-              FROM buyer
-             WHERE SUBSTR(buyer_add1, 1, 2) = '서울');
+         WHERE MOD(SUBSTR(mem_regno2,1,1), 2) = 0))
+     AND prod_lgu IN (
+        SELECT lprod_gu
+          FROM lprod
+         WHERE lprod_nm LIKE '%전자%')
+     AND prod_buyer IN (
+        SELECT buyer_id
+          FROM buyer
+         WHERE SUBSTR(buyer_add1, 1, 2) = '서울');
 
 -- 집계 함수(GROUP)
-
 -- AVG(column) = DISTINCT 중복값 제외 / ALL : Defalut
 SELECT ROUND(AVG(DISTINCT prod_cost),2) AS rnd1, 
         ROUND(AVG(ALL prod_cost), 2) AS rnd2, 
@@ -343,5 +345,10 @@ SELECT prod_name, COUNT(prod_name) as cnt_name
  GROUP BY prod_name, prod_id
  ORDER BY prod_id DESC;
  
- 
+SELECT cart_prod
+  FROM cart
+ WHERE cart_member IN (
+    SELECT mem_id
+      FROM member
+     WHERE mem_like = '수영');
  
