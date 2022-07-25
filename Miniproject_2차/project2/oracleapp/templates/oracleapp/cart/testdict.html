@@ -1,0 +1,32 @@
+<!-- {% comment %} {{no1}}
+<br>{{no2}}
+<br>{{no3}}
+<br>{{no4}}
+<br>{{no5}} {% endcomment %}
+
+{% comment %} {{dt}} {% endcomment %} -->
+
+<table border="1">
+    <!-- 제목 -->
+    <tr>
+        <th>no1</th>
+        <th>no2</th>
+        <th>no3</th>
+    </tr>
+    <!-- 데이터 출력 -->
+    {% comment %} {% for tup in dt %}
+    <tr>
+        {% for data in tup %}
+        <td>{{data}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %} {% endcomment %}
+    {% for d in dt %}
+    <tr>
+        <td>{{d.no1}}</td>
+        <td>{{d.no3}}</td>
+        <td>{{d.no2}}</td>
+    </tr>
+    {% endfor %}
+</table>
+

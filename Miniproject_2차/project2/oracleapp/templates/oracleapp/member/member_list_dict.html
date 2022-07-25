@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>회원 리스트 조회하기</title>
+        </title>
+    </head>
+    <body>
+        <p>회원 목록</p>
+        <table border="1">
+            <tr style="background-color:yellow;">
+                <th>아이디</th>
+                <th>비밀번호</th>
+                <th>이름</th>
+                <th>주민번호(앞)</th>
+                <th>주민번호(뒤)</th>
+                <th>생년월일</th>
+                <th>우편번호</th>
+                <th>주소</th>
+                <th>상세주소</th>
+                <th>집전화</th>
+                <th>회사전화</th>
+                <th>이동전화</th>
+                <th>이메일</th>
+                <th>직업</th>
+                <th>취미</th>
+                <th>기념일명</th>
+                <th>기념일날짜</th>
+                <th>마일리지</th>
+                <th>탈퇴여부</th>
+            </tr>
+            {% for d in df_list %}
+            <tr>
+                <td>
+                    <a href = "http://127.0.0.1:8000/oracle/member?mem_id={{d.mem_id}}">{{d.mem_id}}</a>
+                </td>
+                <td>{{d.mem_pass}}</td>
+                <td>{{d.mem_name}}</td>
+                <td>{{d.mem_regno1}}</td>
+                <td>{{d.mem_regno2}}</td>
+                <td>{{d.mem_bir}}</td>
+                <td>{{d.mem_zip}}</td>
+                <td>{{d.mem_add1}}</td>
+                <td>{{d.mem_add2}}</td>
+                <td>{{d.mem_hometel}}</td>
+                <td>{{d.mem_comtel}}</td>
+                <td>{{d.mem_hp}}</td>
+                <td>{{d.mem_mail}}</td>
+                <td>{{d.mem_job}}</td>
+                <td>{{d.mem_like}}</td>
+                <td>{{d.mem_memorial}}</td>
+                <td>{{d.mem_memorialday}}</td>
+                <td>{{d.mem_mileage}}</td>
+                <td>{{d.mem_delete}}</td>
+            </tr>
+            {% endfor %}    
+        </table>
+    </body>
+</html>
