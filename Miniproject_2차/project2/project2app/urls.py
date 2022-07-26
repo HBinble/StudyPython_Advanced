@@ -11,4 +11,7 @@ urlpatterns = [
     path('index_css05/', views.index_05),
     path('index_css06/', views.index_06),
     path('smartfarm01/', views.smartfarm_01),
+    path('smartfarmcenter/', views.smartfarm_center),
+    path('home/', views.home),
+    path('foliumfarm/', views.foliumfarm),
 ]
