@@ -10,6 +10,9 @@
 <head>
     <title>::: smartfarm 페이지 :::</title>
 
+    <link rel="stylesheet" type="text/css" href="https://getbootstrap.kr/docs/5.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
     <!-- sytle : css 적용 방법 3번..head 안에 style 영역지정 -->
     <link href="{% static '/project2app/css/practice.css' %}" rel="stylesheet" type="text/css">
 </head>
@@ -21,14 +24,8 @@
     <!-- 링크 주소는 urls.py의 URL과 동일하게 작성.. -->
     <nav>
         <!-- 한곳에서 관리할 수 있도록 include 처리 -->
-        {% include 'project2app/include/nav.html' %}
+        {% include 'project2app/include/bootstrap_nav.html' %}
     </nav>
-    <center>
-    <h1>스마트팜 vs 일반농작</h1>
-    <a href="https://data.smartfarmkorea.net/infoUse/customChart.do?menuId=M060403">스마트팜 분석</a>
-    </center>
-
-
 
     <!-- 수평선 그리기 : 시작태그와 끝태그 없이 시작과 동시에 끝..-->
     <hr/>
@@ -36,15 +33,19 @@
     <!-- 이미지 넣기 -->
     <!-- src : 이미지의 위치 (웹 경로를 따름) -->
     <center>
+    <h1>스마트팜</h1>
     <table>
-        <td><img alt="" src="{% static 'project2app/images/image_01.jfif' %} " style="max-width: 100%; height: auto;"> <p>환경비교</p></td>
+        <td><img alt="" src="{% static 'project2app/images/image_01.jfif' %} " style="max-width: 150%; height: auto;"> <p>환경비교</p></td>
         <td><img alt="" src="{% static 'project2app/images/img_02.png' %}" style="max-width: 100%; height: auto;"> <p>작물비교</p></td>
-        <td><img alt="" src="{% static 'project2app/images/img_03.png' %}" style="max-width: 100%; height: auto;"> 
+        <td><img alt="" src="{% static 'project2app/images/img_03.png' %}" style="width: 450px; height: 300px;"> 
             <p><a href = "http://127.0.0.1:8000/project2/foliumfarm">스마트팜 전국분포</a>
-            <a href = "http://127.0.0.1:8000/project2/foliumfarm">스마트팜 전국센터</a></p>
+            <a href = "http://127.0.0.1:8000/project2/smartfarmcenter">스마트팜 전국센터</a></p>
         </td>
     </table>    
     </center>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://getbootstrap.kr/docs/5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 
 </html>

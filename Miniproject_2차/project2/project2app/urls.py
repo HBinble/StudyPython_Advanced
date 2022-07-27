@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     path('sample01/', views.sample_01),
-    path('index01/', views.index_01),
+    path('pest/', views.pest_02),
     path('index_css02/', views.index_02),
     path('index_css03/', views.index_03),
     path('index_css04/', views.index_04),
@@ -14,4 +14,10 @@ urlpatterns = [
     path('smartfarmcenter/', views.smartfarm_center),
     path('home/', views.home),
     path('foliumfarm/', views.foliumfarm),
+    path('indexfarm/', views.index_farm),
+    path('createtable/', views.createTable),
+    path('insertTest/', views.set_Smartfarm_Insert_test),
+    path('list/', views.view_Smartfarm_List),
+    path('smartfarmsurvey/', views.view_Smartfarm),
+    path('insert/', views.set_Smartfarm_Insert),
 ]
