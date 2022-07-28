@@ -3,74 +3,124 @@
 <!-- static 폴더의 데이터 활용하기 -->
 {% load static %}
 
-<html>
-<!-- 브라우저에서 html 실행 시 가장 먼저 읽어 들이는 곳 -->
-<!-- Javascript, css 등의 처리를 기본적으로 수행 -->
-
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>::: PEST 페이지 :::</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{% static '/project2app/assets/favicon.ico' %}" />
-    <!-- Bootstrap icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="{% static '/project2app/css/styles.css' %}" rel="stylesheet" />
-</head>
-<body>
-    <!-- Navigation-->
-    <nav>
-        {% include 'project2app/include/index_nav.html' %}
-    </nav>
-    <header class="bg-success py-3">
-        <div class="container px-3 px-lg-3 my-3">
-            <div class="text-center text-white">
-                <h2 class="display-3 fw-bolder">노동력 확보 어려움 해결</h2>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>::: PEST :::</title>
+        <link href="{% static '/project2app/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav>
+            {% include 'project2app/include/index_nav.html' %}
+        </nav>
+        
+        <header class="bg-success py-3">
+            <div class="container px-3 px-lg-3 my-3">
+                <div class="text-center text-white">
+                    <h1 class="display-3 fw-bolder">환경분석</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">노동력 확보 어려움 해결</p>
+                </div>
             </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-5 px-lg-5 mt-5">
+                <div class="row gx-5 gx-lg-5 row-cols-6 row-cols-md-3 row-cols-xl-2 justify-content-center">
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">1. 농업 인구 부족률</h5>
+                            </div>
+                            <img class="card-img-top" src="{% static 'project2app/images/근로자 부족률 추이.png' %}" style="width: auto; height: 400px;" alt="..." />
+                            <div class="card-body p-0">                                
+                            </div>
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">2. 농가수 농가 인구추이</h5>
+                            </div>
+                            <img class="card-img-top" src="{% static 'project2app/images/농가수 농가 인구추이.png' %}" style="width: auto; height: 400px;" alt="..." />
+                            <div class="card-body p-0">                                
+                            </div>
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">3. 20대 농가 취업률</h5>
+                            </div>
+                            <img class="card-img-top" src="{% static 'project2app/images/20대 취업률 수치.png' %}" style="width: auto; height: 400px;" alt="..." />
+                            <div class="card-body p-0">                                
+                            </div>
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">3. 50대 농가 취업률</h5>
+                            </div>
+                            <img class="card-img-top" src="{% static 'project2app/images/50대 취업률 수치.png' %}" style="width: auto; height: 400px;" alt="..." />
+                            <div class="card-body p-0">                                
+                            </div>
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">4. 스마트팜 보급현황</h5>
+                            </div>
+                            <img class="card-img-top" src="{% static 'project2app/images/스마트팜 보급현황.png' %}" style="width: auto; height: 400px;" alt="..." />
+                            <div class="card-body p-0">                                
+                            </div>
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <h5 class="fw-bolder">5. 정부 지원금</h5>
+                            </div>
+                            <img class="card-img-top" src="{% static 'project2app/images/정부 지원금.png' %}" style="width: auto; height: 400px;" alt="..." />
+                            <div class="card-body p-0">                                
+                            </div>
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+    <!-- Footer-->
+    <footer class="py-5 bg-success">
+        <div class="m-0 text-center text-white">
+            <span>한국품질재단 빅데이터</span>
+            <span>2조 : 강동현 지동주 이한빈</span>
+            <span>Tel : 051-000-0000</span>
+            <span>사업자번호 : 000-00-0000</span>
+            <span><address>46279 부산광역시 금정구 중앙대로 1617-12 푸르지오 상가 2층 207호</address></span>
+            </div>
+            <p class="m-0 text-center text-white">copyright &copy; <strong>BigData SmartFarm</strong>. All Rights Reserved.</p>        
         </div>
-    </header>
-
-    <h2 style="text-align:left;">1.농업 인구 부족률 </h2>
-    <img style="text-align:left;" src="{% static 'project2app/images/근로자 부족률 추이.PNG' %}" width = '500' height = '300'>
-    <br /></br>
-    <br /></br>
-    
-    <h2>2.~~ </h2>
-    <img src="{% static 'project2app/images/인구수.PNG' %}" width = '350' height = '250'>
-    <img src="{% static 'project2app/images/인구수1.PNG' %}" width = '140' height = '250'>
-    <br /></br>
-    <br /></br>
-    <h2>3.~~ </h2>
-    <img src="{% static 'project2app/images/농가수 농가 인구추이.PNG' %}" width = '350' height = '250'>
-    <img src="{% static 'project2app/images/농가수 농가 인구 추이1.PNG' %}" width = '350' height = '130'>
-    <br /></br>
-    <br /></br>
-
-    <br /></br>
-    <h2>4.~~ </h2>
-    <img src="{% static 'project2app/images/20대 취업률 수치.PNG' %}" width = '350' height = '250'>
-    <img src="{% static 'project2app/images/50대 취업률 수치.PNG' %}" width = '350' height = '250'>
-    
-    <br /></br>
-    <br /></br>
-    <h2>2.~~ </h2>
-    <img src="{% static 'project2app/images/스마트팜 보급현황.PNG' %}" width = '350' height = '250'>
-
-    <br /></br>
-    <br /></br>
-    <h2>2.~~ </h2>
-    <img src="{% static 'project2app/images/정부 지원금.PNG' %}" width = '600' height = '200'>
-    
-    
-
-    <!--수평선 그리기 : 시작태그와 끝태그 없이 시작과 동시에 끝-->
-    <hr/>
-
-    <!--이미지 넣기-->
-    <!--src : 이미지의 위치(웹 경로를 따름)-->
-    
-</body>       
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
 </html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>::: PEST :::</title>
+        <link href="{% static '/project2app/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav>
+            {% include 'project2app/include/index_nav.html' %}
+        </nav>
+        
+        <header class="bg-success py-4">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">작물분석</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">스마트팜과 일반농업 작물 차이</p>
+                </div>
+            </div>
+        </header>
+
+        <h2 style="text-align:left;">초장 </h2>
+        <img style="text-align:left;" src="{% static 'project2app/images/초장_정규성.png' %}" width = '500' height = '300'>
+        <img style="text-align:left;" src="{% static 'project2app/images/초장_평균.png' %}" width = '500' height = '300'>
+        <img style="text-align:left;" src="{% static 'project2app/images/초장_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img style="text-align:left;" src="{% static 'project2app/images/초장_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+        
+        <h2>엽장 </h2>
+        <img src="{% static 'project2app/images/엽장_정규성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽장_평균.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽장_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽장_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+
+        <h2>엽폭 </h2>
+        <img src="{% static 'project2app/images/엽폭_정규성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽폭_평균.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽폭_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽폭_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+
+        <h2>엽병장 </h2>
+        <img src="{% static 'project2app/images/엽병장_정규성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽병장_평균.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽병장_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽병장_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+
+        <h2>엽수 </h2>
+        <img src="{% static 'project2app/images/엽수_정규성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽수_평균.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽수_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/엽수_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+
+        <h2>관부직경 </h2>
+        <img src="{% static 'project2app/images/관부직경_정규성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/관부직경_평균.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/관부직경_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/관부직경_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+
+        <h2>소화수 </h2>
+        <img src="{% static 'project2app/images/소화수_정규성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/소화수_평균.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/소화수_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/소화수_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+        
+        <h2>착과수 </h2>
+        <img src="{% static 'project2app/images/착과수_정규성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/착과수_평균.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/착과수_smart_등분산성.png' %}" width = '500' height = '300'>
+        <img src="{% static 'project2app/images/착과수_normal_등분산성.png' %}" width = '500' height = '300'>
+        <br /></br>
+        <br /></br>
+
+    <!-- Footer-->
+    <footer class="py-5 bg-success">
+        <div class="m-0 text-center text-white">
+            <span>한국품질재단 빅데이터</span>
+            <span>2조 : 강동현 지동주 이한빈</span>
+            <span>Tel : 051-000-0000</span>
+            <span>사업자번호 : 000-00-0000</span>
+            <span><address>46279 부산광역시 금정구 중앙대로 1617-12 푸르지오 상가 2층 207호</address></span>
+            </div>
+            <p class="m-0 text-center text-white">copyright &copy; <strong>BigData SmartFarm</strong>. All Rights Reserved.</p>        
+        </div>
+    </footer>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+</body>
+</html>

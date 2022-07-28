@@ -13,24 +13,44 @@
     <nav>
         {% include 'project2app/include/index_nav.html' %}
     </nav>
+
     <div class="text-center">
     <h2>* 스마트팜 데이터 입력하기 *</h2>
     <form action="/project2/insert/" method="post">
         {% csrf_token %}
+        <center>
     <table>
         <tr>
             <td>
-                시도 : <input type="text" name="sido" value="">
+                시도　　 : <select name="sido" value="">
+                        <option value = "서울특별시" selected>서울특별시</option>
+                        <option value = "부산광역시">부산광역시</option>
+                        <option value = "대구광역시">대구광역시</option>
+                        <option value = "인천광역시">인천광역시</option>
+                        <option value = "광주광역시">광주광역시</option>
+                        <option value = "대전광역시">대전광역시</option>
+                        <option value = "울산광역시">울산광역시</option>
+                        <option value = "세종특별자치시">세종특별자치시</option>
+                        <option value = "경기도">경기도</option>
+                        <option value = "강원도">강원도</option>
+                        <option value = "충청북도">충청북도</option>
+                        <option value = "충청남도">충청남도</option>
+                        <option value = "전라북도">전라북도</option>
+                        <option value = "전라남도">전라남도</option>
+                        <option value = "경상북도">경상북도</option>
+                        <option value = "경상남도">경상남도</option>
+                        <option value = "제주특별자치도">제주특별자치도</option>
             </td>
         </tr>
         <tr>
             <td>
-                시군구 : <input type="text" name="sigu" value="">
+                시군구　 : <input type="text" name="sigu" value="">
             </td>
         </tr>
+        <hr>
         <tr>
-            <td>재배하는 스마트팜 제품은?</td>
-            <td>
+            <td>재배하는 스마트팜 제품은?<br>
+            
                 <label for="strawberry">딸기</label>
                 <input type="radio" id="strawberry" name="product" value="딸기" checked="checked">
                 &nbsp
@@ -41,56 +61,57 @@
                 <input type="radio" id="cucumber" name="product" value="오이">
                 &nbsp
                 <label for="paprika">파프리카</label>
-                <input type="radio" id="paprika" name="product" value="파프리카">
+                <input type="radio" id="paprika" name="product" value="파프리카"></p>
             </td>
         </tr>
         <tr>
             <td>
-                초장 : <input type="number" name="leng" value="">
+                초장　　 : <input type="number" step="0.01" name="leng" value="">
             </td>
         </tr>
         <tr>
             <td>
-                엽장 : <input type="number" name="lfleng" value="">
+                엽장　　 : <input type="number" step="0.01"  name="lfleng" value="">
             </td>
         </tr>
         <tr>
             <td>
-                엽폭 : <input type="number" name="lfwidth" value="">
+                엽폭　　 : <input type="number" step="0.01" name="lfwidth" value="">
             </td>
         </tr>
         <tr>
             <td>
-                엽병장 : <input type="number" name="stalkleng" value="">
+                엽병장　 : <input type="number" step="0.01" name="stalkleng" value="">
             </td>
         </tr>
         <tr>
             <td>
-                엽수 : <input type="number" name="lfcnt" value="">
+                엽수　　 : <input type="number" step="0.01" name="lfcnt" value="">
             </td>
         </tr>
         <tr>
             <td>
-                관부직경  : <input type="number" name="pulpdia" value="">
+                관부직경 : <input type="number" step="0.01" name="pulpdia" value="">
             </td>
         </tr>
         <tr>
             <td>
-                소화수 : <input type="number" name="flwrcnt" value="">
+                소화수　 : <input type="number" step="0.01" name="flwrcnt" value="">
             </td>
         </tr>
         <tr>
             <td>
-                착과수  : <input type="number" name="fruitcnt" value="">
+                착과수　  : <input type="number" step="0.01" name="fruitcnt" value="">
             </td>
         </tr>
         <tr>
             <td colspan="2">
             <br>
-            <input type="submit" value="설문완료">
+            <input type="submit" value="입력완료">
             <input type="reset" value="초기화">
         </tr>
     </table>
+    </center>
     </form>
-    </div>  
+    </div>
 </body>

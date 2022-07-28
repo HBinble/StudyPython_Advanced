@@ -45,8 +45,8 @@ def createTableSmartfarm() :
     sql = """Create Table smartfarm
             (
                 rnums number(15) not null,
-                sido varchar2(20) not null,
-                sigu varchar2(20) not null,
+                sido varchar2(20),
+                sigu varchar2(20),
                 product varchar2(20) not null,
                 leng number(15) not null,
                 lfleng number(15) not null,

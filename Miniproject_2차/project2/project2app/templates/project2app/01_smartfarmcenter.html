@@ -1,7 +1,13 @@
 <!DOCTYPE html>
+{% load static %}
 <head>    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>::: smartfarm 페이지 :::</title>
+    <link href="{% static '/project2app/css/styles.css' %}" rel="stylesheet" />
+
         <script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
@@ -31,9 +37,12 @@
                     top: 0.0%;
                 }
             </style>
-        
 </head>
-<body>    
+<body>
+            <!-- Navigation-->
+    <nav>
+        {% include 'project2app/include/index_nav.html' %}
+    </nav>    
     
             <div class="folium-map" id="map_ec885086de1575fb66cbf044c009ce67" ></div>
         

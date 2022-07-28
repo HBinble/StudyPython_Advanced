@@ -20,6 +20,13 @@ def pest_02(request) :
         "project2app/02_pest.html",
         {}
     )
+
+def factor_03(request) :
+    return render(
+        request,
+        "project2app/03_factor.html",
+        {}
+    )
     
 def index_02(request) :
     return render(
@@ -179,3 +186,107 @@ def set_Smartfarm_Insert(request) :
                 </script>"""
                 
     return HttpResponse(msg)
+
+# ############################# 설문분석하기 ################################
+
+# # 설문 분석결과 보기
+# def survey_Analysis(request) :
+    
+#     ## 설문 데이터 조회하기
+#     df = survey.getSurveyList()
+    
+#     ## 설문 분석하기(함수로 처리)
+#     # rs_df : 분석에 사용된 컬럼 추가된 최종본
+#     # rs_ct : 교차표(crossTab) 데이터
+#     # rs_msg : 해석결과
+#     rs_df, rs_ct, rs_msg = get_Analysis(df)
+    
+#     ## 시각화 및 저장하기(함수로 처리)
+#     view_Visualization(rs_df)
+    
+#     context = {
+#         # 교차표(데이터프레임 형태)를 html로 전환하여 키 생성
+#         "crossTab" : rs_ct.to_html(),
+        
+#         #해석내용
+#         "results" : rs_msg
+#     }
+    
+#     return render(
+#         request, 
+#         "chi2app/analysis.html",
+#         context
+#     )
+
+# ############################# 그래프 그리기, 이미지 저장 ################################
+
+# import pandas as pd
+# import scipy.stats as stats
+# import seaborn as sns
+# import matplotlib.pyplot as plt
+
+
+# ## 설문 분석하기
+# def get_Analysis(df) :
+#     # 성별을 숫자로...(람다 방식 사용...)
+#     df["genNum"] = df["gender"].apply(lambda g:1 if g=="남" else 2)
+    
+#     # 커피숍 이름을 숫자로
+#     df["coNum"] = df["co_survey"].apply(lambda c:1 if c == "스타벅스" \
+#                     else 2 if c == "커피빈" \
+#                     else 3 if c == "이디아" else 4)
+    
+#     # 교차표 (빈도표) 생성하기
+#     crossTab = pd.crosstab(index = df["gender"], columns = df["co_survey"])
+    
+#     # 검증하기
+#     chi, pv, _, _ = stats.chi2_contingency(crossTab)
+    
+#     # 검증결과
+#     results = ""
+    
+#     if pv > 0.05 :
+#         results = "p-value 값이 유의수준 <b>{:.3f} > 0.05</b> 이므로,"\
+#                     "<br> 성별에 따라 선호하는 커피브랜드에는 "\
+#                     "<b>차이가 없다.(귀무가설 채택)</b>".format(pv)
+#     else :
+#         results = "p-value 값이 유의수준 <b>{:.3f} <= 0.05</b> 이므로,"\
+#                     "<br> 성별에 따라 선호하는 커피브랜드에는 "\
+#                     "<b>차이가 있다.(대립가설 채택)</b>".format(pv)
+    
+#     return df, crossTab, results
+
+# ## 시각화 및 저장하기(함수로 처리)
+# def view_Visualization(df) :
+#     # 한글 처리
+#     plt.rc("font", family="Malgun Gothic")
+    
+#     # 그래프 사이즈
+#     plt.figure(figsize=(18, 18))
+    
+#     # fig 객체 얻기 : gcf => figure와 같음
+#     fig = plt.gcf()
+    
+#     # 그룹화 하기
+#     gen_group = df["co_survey"].groupby(df["coNum"]).count()
+    
+#     # 그룹에 인덱스 이름 정의하기 (인덱스 번호를 한글 이름으로)
+#     gen_group.index = ["스타벅스", "커피빈", "이디아", "탐앤탐스"]
+    
+#     # 막대그래프 그리기
+#     # width = 막대 너비
+#     gen_group.plot.bar(color = ["red","green","blue","orange"],
+#                         width=0.3)
+    
+#     # 제목 정의
+#     plt.title("커피샵 별 선호도", fontsize= 40)
+#     plt.xlabel("커피샵", fontsize = 30)
+#     plt.ylabel("선호도 건수", fontsize = 30)
+    
+#     # x축 y축에 들어가는 값들에 대한 폰트 사이즈 조정
+#     # rotation : 기울기
+#     plt.xticks(fontsize = 20, rotation = 70)
+#     plt.yticks(fontsize = 20)
+    
+#     # 그래프 저장하기
+#     fig.savefig("chi2app/static/chi2app/images/chi2.png")

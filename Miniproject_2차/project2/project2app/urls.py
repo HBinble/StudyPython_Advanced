@@ -5,6 +5,7 @@ from . import views
 urlpatterns = [
     path('sample01/', views.sample_01),
     path('pest/', views.pest_02),
+    path('factor/', views.factor_03),
     path('index_css02/', views.index_02),
     path('index_css03/', views.index_03),
     path('index_css04/', views.index_04),
@@ -20,4 +21,5 @@ urlpatterns = [
     path('list/', views.view_Smartfarm_List),
     path('smartfarmsurvey/', views.view_Smartfarm),
     path('insert/', views.set_Smartfarm_Insert),
+    # path('analysis/', views.survey_Analysis),
 ]

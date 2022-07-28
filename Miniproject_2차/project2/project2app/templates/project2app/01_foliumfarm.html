@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+{% load static %}
 <head>    
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    
+    <link href="{% static '/project2app/css/styles.css' %}" rel="stylesheet" />
         <script>
             L_NO_TOUCH = false;
             L_DISABLE_3D = false;
@@ -35,7 +36,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 </head>
 <body>    
-    
+    <!-- Navigation-->
+    <nav>
+        {% include 'project2app/include/index_nav.html' %}
+    </nav>    
             <div class="folium-map" id="map_49526e4ddaf269d1c01cfe1f1ec5e335" ></div>
         
 </body>
