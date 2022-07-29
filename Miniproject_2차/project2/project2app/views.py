@@ -27,7 +27,62 @@ def factor_03(request) :
         "project2app/03_factor.html",
         {}
     )
+def factor_03_01(request) :
+    return render(
+        request,
+        "project2app/03_factor_01.html",
+        {}
+    )
     
+def factor_03_02(request) :
+    return render(
+        request,
+        "project2app/03_factor_02.html",
+        {}
+    )
+    
+def factor_03_03(request) :
+    return render(
+        request,
+        "project2app/03_factor_03.html",
+        {}
+    )    
+    
+def factor_03_04(request) :
+    return render(
+        request,
+        "project2app/03_factor_04.html",
+        {}
+    )
+    
+def factor_03_05(request) :
+    return render(
+        request,
+        "project2app/03_factor_05.html",
+        {}
+    )
+    
+def factor_03_06(request) :
+    return render(
+        request,
+        "project2app/03_factor_06.html",
+        {}
+    )
+
+def factor_03_07(request) :
+    return render(
+        request,
+        "project2app/03_factor_07.html",
+        {}
+    )
+
+def factor_03_08(request) :
+    return render(
+        request,
+        "project2app/03_factor_08.html",
+        {}
+    )
+                    
 def index_02(request) :
     return render(
         request,

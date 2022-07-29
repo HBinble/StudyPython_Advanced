@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>::: FACTOR :::</title>
+        <link href="{% static '/project2app/css/styles.css' %}" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav>
+            {% include 'project2app/include/index_nav.html' %}
+        </nav>
+        <!-- Header-->
+        <header class="bg-success py-3">
+            <div class="container px-3 px-lg-3 my-3">
+                <div class="text-center text-white">
+                    <h1 class="display-3 fw-bolder">요인분석</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">데이터를 기반으로 최상급 농작물 생산</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-5 px-lg-5 mt-5">
+                <div class="row gx-5 gx-lg-5 row-cols-6 row-cols-md-3 row-cols-xl-4 justify-content-center">
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">소화수</h5>
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'project2app/images/소화수_정규성.png' %}" style="width: auto; height: auto;" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-0">                                
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">데이터 정규성</h5>
+                            </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">소화수</h5>
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'project2app/images/소화수_평균.png' %}" style="width: auto; height: auto;" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-0">                                
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">데이터 평균</h5>
+                            </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">소화수</h5>
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'project2app/images/소화수_smart_등분산성.png' %}" style="width: auto; height: auto;" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-0">                                
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">스마트팜 등분산성</h5>
+                            </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>                    <div class="col mb-auto">
+                        <div class="card h-100">
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">소화수</h5>
+                            </div>
+                            <!-- Product image-->
+                            <img class="card-img-top" src="{% static 'project2app/images/소화수_normal_등분산성.png' %}" style="width: auto; height: auto;" alt="..." />
+                            <!-- Product details-->
+                            <div class="card-body p-0">                                
+                            <div class="text-center">
+                                <!-- Product name-->
+                                <h5 class="fw-bolder">일반농업 등분산성</h5>
+                            </div>
+                            </div>
+                            <!-- Product actions-->
+                            <div class="card-footer p-0 pt-0 border-top-0 bg-transparent"> 
+                            </div>
+                        </div>
+                    </div>  
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer-->
+        <footer class="py-5 bg-success">
+            <div class="m-0 text-center text-white">
+                <span>한국품질재단 빅데이터</span>
+                <span>2조 : 강동현 지동주 이한빈</span>
+                <span>Tel : 051-000-0000</span>
+                <span>사업자번호 : 000-00-0000</span>
+                <span><address>46279 부산광역시 금정구 중앙대로 1617-12 푸르지오 상가 2층 207호</address></span>
+                </div>
+                <p class="m-0 text-center text-white">copyright &copy; <strong>BigData SmartFarm</strong>. All Rights Reserved.</p>        
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
+
