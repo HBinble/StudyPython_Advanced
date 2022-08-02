@@ -24,4 +24,5 @@ urlpatterns = [
     path('list/', views.view_Smartfarm_List),
     path('smartfarmsurvey/', views.view_Smartfarm),
     path('insert/', views.set_Smartfarm_Insert),
+    # path('analysis/', views.survey_Analysis),
 ]

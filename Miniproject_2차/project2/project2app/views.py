@@ -248,7 +248,7 @@ def set_Smartfarm_Insert(request) :
 # def survey_Analysis(request) :
     
 #     ## 설문 데이터 조회하기
-#     df = survey.getSurveyList()
+#     df = project2.getSmartfarmList()
     
 #     ## 설문 분석하기(함수로 처리)
 #     # rs_df : 분석에 사용된 컬럼 추가된 최종본
@@ -269,7 +269,7 @@ def set_Smartfarm_Insert(request) :
     
 #     return render(
 #         request, 
-#         "chi2app/analysis.html",
+#         "project2app/smartfarmanalysis.html",
 #         context
 #     )
 
@@ -283,16 +283,16 @@ def set_Smartfarm_Insert(request) :
 
 # ## 설문 분석하기
 # def get_Analysis(df) :
-#     # 성별을 숫자로...(람다 방식 사용...)
-#     df["genNum"] = df["gender"].apply(lambda g:1 if g=="남" else 2)
+#     # # 성별을 숫자로...(람다 방식 사용...)
+#     # df["genNum"] = df["gender"].apply(lambda g:1 if g=="남" else 2)
     
-#     # 커피숍 이름을 숫자로
-#     df["coNum"] = df["co_survey"].apply(lambda c:1 if c == "스타벅스" \
-#                     else 2 if c == "커피빈" \
-#                     else 3 if c == "이디아" else 4)
+#     # 재배작물 이름을 숫자로
+#     df["coNum"] = df["product"].apply(lambda c:1 if c == "딸기" \
+#                     else 2 if c == "토마토" \
+#                     else 3 if c == "오이" else 4)
     
 #     # 교차표 (빈도표) 생성하기
-#     crossTab = pd.crosstab(index = df["gender"], columns = df["co_survey"])
+#     crossTab = pd.crosstab(index = df["coNum"], columns = df["fruitcnt"])
     
 #     # 검증하기
 #     chi, pv, _, _ = stats.chi2_contingency(crossTab)
@@ -323,10 +323,10 @@ def set_Smartfarm_Insert(request) :
 #     fig = plt.gcf()
     
 #     # 그룹화 하기
-#     gen_group = df["co_survey"].groupby(df["coNum"]).count()
+#     gen_group = df["fruitcnt"].groupby(df["coNum"]).count()
     
 #     # 그룹에 인덱스 이름 정의하기 (인덱스 번호를 한글 이름으로)
-#     gen_group.index = ["스타벅스", "커피빈", "이디아", "탐앤탐스"]
+#     gen_group.index = ["딸기", "토마토", "오이", "파프리카"]
     
 #     # 막대그래프 그리기
 #     # width = 막대 너비
@@ -334,9 +334,9 @@ def set_Smartfarm_Insert(request) :
 #                         width=0.3)
     
 #     # 제목 정의
-#     plt.title("커피샵 별 선호도", fontsize= 40)
-#     plt.xlabel("커피샵", fontsize = 30)
-#     plt.ylabel("선호도 건수", fontsize = 30)
+#     plt.title("스파트팜 평균", fontsize= 40)
+#     plt.xlabel("요인", fontsize = 30)
+#     plt.ylabel("평균", fontsize = 30)
     
 #     # x축 y축에 들어가는 값들에 대한 폰트 사이즈 조정
 #     # rotation : 기울기
@@ -344,4 +344,4 @@ def set_Smartfarm_Insert(request) :
 #     plt.yticks(fontsize = 20)
     
 #     # 그래프 저장하기
-#     fig.savefig("chi2app/static/chi2app/images/chi2.png")
+#     fig.savefig("project2app/static/project2app/images/chi2.png")
